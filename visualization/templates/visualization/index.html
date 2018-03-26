@@ -2,13 +2,14 @@
 {% load static %}
 
 {% block title %} Visualization {% endblock %}
+
 {% block head %}
 <script type="text/javascript" src="{% static 'external/vis.min.js' %}"></script>
 <link  rel="stylesheet" type="text/css" href="{% static 'external/vis.min.css' %}"/>
 {% endblock %}
+
 {% block body %}
 <h1>CNN Visualization V.1</h1>
-<h3>{{ s.get_description }}</h3>
 <style type="text/css">
     #mynetwork {
       width: 600px;
