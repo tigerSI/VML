@@ -15,6 +15,9 @@
     height: 100%;
     border: 1px solid lightgray;
   }
+  .hidden {
+    visibility: hidden;
+  }
 </style>
 <div class="row justify-content-center">
   <div class="col-10">
@@ -25,10 +28,9 @@
   <div id="mynetwork" class="col-12"></div>
 </div>
 <p id="selection"></p>
+<div class="hidden" id="dot_string">{{ dot_string }}</div>
 {% endblock %}
-
 
 {% block script %}
 <script type="text/javascript" src="{% static 'visualization/index.js' %}"></script>
-
 {% endblock %}
