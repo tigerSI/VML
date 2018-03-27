@@ -1,6 +1,5 @@
 $(document).ready(function() {
     var arr = [];
-
     for (var i = 1; i <= 203; i++) {
         if (i <= 1) {
           arr.push({id: i, label: 'Node'+i, content:' Content inside yes ', group: 1});
@@ -43,26 +42,25 @@ $(document).ready(function() {
         arr2.push({from: i, to: i+32});
     }
     for (var i = 34; i <= 65; i++) {
-      for (var j = 34; j <= 65; j++) {
-        arr2.push({from: i, to: j+64});
+      for (var j = 34; j <= 97; j++) {
+        arr2.push({from: i, to: j+32});
       }  
     }
-    // for (var i = 33; i <= 65; i++) {
-    //     arr2.push({from: i, to: i});
+    for (var i = 34; i <= 65; i++) {
+      for (var j = 34; j <= 97; j++) {
+        arr2.push({from: i, to: j+32});
+      }  
+    }
+    // for (var i = 65; i <= 128; i++) {
+    //   for (var j = 1; j <= 64; j++) {
+    //     arr2.push({from: i, to: j+64});
+    //   }  
     // }
+
+
     
     var edges = new vis.DataSet(arr2);
-    // var edges = new vis.DataSet([
-    //   {from: 7, to: 4},
-    //   {from: 6, to: 4},
-    //   {from: 3, to: 4},
-    //   {from: 2, to: 4},
-    //   {from: 1, to: 2},
-    //   {from: 7, to: 5},
-    //   {from: 1, to: 3},
-    //   {from: 1, to: 6},
-    //   {from: 1, to: 7},
-    // ]);
+
 
 
     // create a network
@@ -83,6 +81,9 @@ $(document).ready(function() {
                         enabled: true,
                         direction: "LR",
                         sortMethod: "directed",
+                        levelSeparation: 500,
+                        nodeSpacing: 100,
+
                     }
                 }
                 
