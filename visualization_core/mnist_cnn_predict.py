@@ -17,7 +17,10 @@ def main(unused_argv):
 
   # Predict the input
   names = mnist_classifier.get_variable_names()
-  print(names)
+
+  for i in names:
+      print("Layer :", i, mnist_classifier.get_variable_value(i).shape)
+  return
 
   conv2d_kernel = mnist_classifier.get_variable_value('conv2d/kernel')
   print(conv2d_kernel.shape)

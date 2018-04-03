@@ -1,4 +1,5 @@
 $(document).ready(function() {
+<<<<<<< HEAD
     var arr = [];
     for (var i = 1; i <= 203; i++) {
         if (i <= 1) {
@@ -103,5 +104,34 @@ $(document).ready(function() {
           
     });
 
+=======
+  var DOTstring = $("#dot_string").html().replace(new RegExp('&gt;', 'g'), '>');
+  var parsedData = vis.network.convertDot(DOTstring);
+  
+  var data = {
+    nodes: parsedData.nodes,
+    edges: parsedData.edges
+  }
+  
+  var options = {
+    nodes:   {
+      fixed: {
+        x:true,
+        y:true,
+      }
+    },
+    layout: {
+      hierarchical: {
+        enabled: true,
+        direction: "LR",
+        sortMethod: "directed",
+        levelSeparation: 1500,
+      }
+    }
+  };
+  
+  var container = document.getElementById("mynetwork");
+  var network = new vis.Network(container, data, options);
+>>>>>>> 15d322176ee763497d0c1d5be3ed14d5b3909386
 
 });
