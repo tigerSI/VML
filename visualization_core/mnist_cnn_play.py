@@ -8,14 +8,13 @@ import matplotlib.pyplot as plt
 
 from mnist_cnn_model import cnn_model_fn
 
-#tf.logging.set_verbosity(tf.logging.INFO)
+tf.logging.set_verbosity(tf.logging.INFO)
 
 def main(unused_argv):
   # Create the Estimator
   mnist_classifier = tf.estimator.Estimator(
       model_fn=cnn_model_fn, model_dir="mnist_model")
-
-  # Predict the input
+  
   names = mnist_classifier.get_variable_names()
 
   for i in names:
@@ -23,6 +22,7 @@ def main(unused_argv):
 
   conv2d_kernel = mnist_classifier.get_variable_value('conv2d/kernel')
   print(conv2d_kernel.shape)
+  
   data = []
 
   for i in range(32):
@@ -40,7 +40,7 @@ def main(unused_argv):
       plt.imshow(i, cmap="gray")
       current += 1
   plt.show()
-
+  
 
 if __name__ == "__main__":
   tf.app.run()
