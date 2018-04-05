@@ -14,7 +14,21 @@ def main(unused_argv):
   # Create the Estimator
   mnist_classifier = tf.estimator.Estimator(
       model_fn=cnn_model_fn, model_dir="mnist_model")
+
+  latest_checkpoint = mnist_classifier.latest_checkpoint()
+
+  with tf.Session() as sess:
+    saver = tf.train.import_meta_graph(latest_checkpoint + ".meta")
+    saver.restore(sess, tf.train.latest_checkpoint("mnist_model"))
+
+    graph = tf.get_default_graph()
+    for i in graph.get_operations():
+        print(i.name)
+
+    for i in graph.get_collection("trainable_variables"):
+        print(i)
   
+  """
   names = mnist_classifier.get_variable_names()
 
   for i in names:
@@ -40,6 +54,7 @@ def main(unused_argv):
       plt.imshow(i, cmap="gray")
       current += 1
   plt.show()
+  """
   
 
 if __name__ == "__main__":
