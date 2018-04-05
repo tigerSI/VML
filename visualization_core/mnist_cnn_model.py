@@ -54,17 +54,17 @@ def cnn_model_fn(features, labels, mode):
   pool2_flat = tf.reshape(pool2, [-1, 7 * 7 * 64])
 
   # Dense Layer
-  # Densely connected layer with 1024 neurons
+  # Densely connected layer with 256 neurons
   # Input Tensor Shape: [batch_size, 7 * 7 * 64]
-  # Output Tensor Shape: [batch_size, 1024]
-  dense = tf.layers.dense(inputs=pool2_flat, units=1024, activation=tf.nn.relu)
+  # Output Tensor Shape: [batch_size, 256]
+  dense = tf.layers.dense(inputs=pool2_flat, units=256, activation=tf.nn.relu)
 
   # Add dropout operation; 0.6 probability that element will be kept
   dropout = tf.layers.dropout(
       inputs=dense, rate=0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
   # Logits layer
-  # Input Tensor Shape: [batch_size, 1024]
+  # Input Tensor Shape: [batch_size, 256]
   # Output Tensor Shape: [batch_size, 10]
   logits = tf.layers.dense(inputs=dropout, units=10)
 
