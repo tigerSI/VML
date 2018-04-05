@@ -6,6 +6,7 @@
 {% block head %}
 <script type="text/javascript" src="{% static 'external/vis/vis.min.js' %}"></script>
 <link  rel="stylesheet" type="text/css" href="{% static 'external/vis/vis.min.css' %}"/>
+
 {% endblock %}
 
 {% block body %}
@@ -28,7 +29,17 @@
   <div id="mynetwork" class="col-11"></div>
 </div>
 <p id="selection"></p>
+
+<canvas id="canvas" width="300" height="227"></canvas>
+<div>
+  <input id="grayscalebtn" value="Grayscale" type="button">
+  <input id="invertbtn" value="Invert" type="button">
+</div>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+
 <div class="hidden" id="dot_string">{{ dot_string }}</div>
+
 {% endblock %}
 
 {% block script %}
