@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  /*
   var DOTstring = $("#dot_string").html().replace(new RegExp('&gt;', 'g'), '>');
   var parsedData = vis.network.convertDot(DOTstring);
   
@@ -26,6 +27,7 @@ $(document).ready(function() {
   
   var container = document.getElementById("mynetwork");
   var network = new vis.Network(container, data, options);
+<<<<<<< HEAD
   // filter
   // var img = new Image();
   // img.src = 'static/visualization/rhino.jpg';
@@ -136,3 +138,7 @@ $(document).ready(function() {
 
 
 
+=======
+  */
+});
+>>>>>>> 9e9e49ce8b9de712a425495411b1bca4b521e5f1
