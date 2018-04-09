@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  /*
   var DOTstring = $("#dot_string").html().replace(new RegExp('&gt;', 'g'), '>');
   var parsedData = vis.network.convertDot(DOTstring);
   
@@ -26,5 +27,5 @@ $(document).ready(function() {
   
   var container = document.getElementById("mynetwork");
   var network = new vis.Network(container, data, options);
-
+  */
 });
