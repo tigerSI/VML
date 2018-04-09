@@ -1,8 +1,13 @@
 from django.shortcuts import render
-from visualization_core.student import Student
 
-# Create your views here.
+from visualization_core import sample
+
 def index(request):
-    s = Student("Jason")
-    context = { 's' : s }
+    context = {}
+
+    size, input_data = sample.input_sample_2d()
+
+    context["size"] = size
+    context["content"] = input_data
+
     return render(request, 'visualization/index.html', context)
