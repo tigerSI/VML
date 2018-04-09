@@ -6,29 +6,24 @@
 {% block head %}
 <script type="text/javascript" src="{% static 'external/vis/vis.min.js' %}"></script>
 <link  rel="stylesheet" type="text/css" href="{% static 'external/vis/vis.min.css' %}"/>
+<link  rel="stylesheet" type="text/css" href="{% static 'visualization/index.css' %}"/>
 {% endblock %}
 
 {% block body %}
-<style type="text/css">
-  #mynetwork {
-    width: 100%;
-    height: 100%;
-    border: 1px solid lightgray;
-  }
-</style>
 <div class="row justify-content-center">
   <div class="col-10">
       <h1 class="h1 text-center">CNN Visualization</h1>
   </div>
 </div>
-<div class="row">
-  <div id="mynetwork" class="col-12"></div>
-</div>
-<p id="selection"></p>
-{% endblock %}
 
+<div class="row justify-content-center">
+  <div class="col-10">
+    <p class="blue">size : {{ size.0 }} , {{ size.1 }}</p>
+    <p>content : {{ content }}</p>
+  </div>
+</div>
+{% endblock %}
 
 {% block script %}
 <script type="text/javascript" src="{% static 'visualization/index.js' %}"></script>
-
 {% endblock %}
