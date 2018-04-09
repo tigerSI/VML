@@ -6,14 +6,12 @@
 {% block head %}
 <script type="text/javascript" src="{% static 'external/vis/vis.min.js' %}"></script>
 <link  rel="stylesheet" type="text/css" href="{% static 'external/vis/vis.min.css' %}"/>
-<<<<<<< HEAD
 
-=======
 <link  rel="stylesheet" type="text/css" href="{% static 'visualization/index.css' %}"/>
 >>>>>>> 9e9e49ce8b9de712a425495411b1bca4b521e5f1
 {% endblock %}
 
-{% block body %}
+{% block body %}t
 <div class="row justify-content-center">
   <div class="col-10">
       <h1 class="h1 text-center">CNN Visualization</h1>
@@ -26,21 +24,7 @@
     <p>content : {{ content }}</p>
   </div>
 </div>
-<<<<<<< HEAD
-<p id="selection"></p>
 
-<canvas id="canvas" width="300" height="227"></canvas>
-<div>
-  <input id="grayscalebtn" value="Grayscale" type="button">
-  <input id="invertbtn" value="Invert" type="button">
-</div>
-
-<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
-
-<div class="hidden" id="dot_string">{{ dot_string }}</div>
-
-=======
->>>>>>> 9e9e49ce8b9de712a425495411b1bca4b521e5f1
 {% endblock %}
 
 {% block script %}
