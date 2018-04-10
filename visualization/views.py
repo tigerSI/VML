@@ -5,7 +5,7 @@ from visualization_core import sample
 def index(request):
     context = {}
 
-    size, input_data = sample.input_sample_2d()
+    size, input_data = sample.input_sample_1d()
 
     context["size"] = size
     context["content"] = input_data
