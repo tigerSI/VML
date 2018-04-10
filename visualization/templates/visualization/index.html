@@ -23,7 +23,13 @@
     <p>content : {{ content }}</p>
   </div>
 </div>
-
+<div class="row justify-content-center">
+  <div class="col-10-md">
+    <canvas id="myCanvas" style="border:1px solid black;">
+  </div>
+</div>
+<div class="hidden" id="alpha_value">{{ content }}</div>
+<div class="hidden" id="size">{{ size }}</div>
 {% endblock %}
 
 {% block script %}
